@@ -14,8 +14,13 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "jsx": "react",
+    "jsxFactory": "Bricks.stack",
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bricks/stack": ["libs/stack/src/index.ts"],
+      "@bricks/bricks": ["libs/bricks/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

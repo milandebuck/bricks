@@ -25,6 +25,12 @@
     "examples-e2e": {
       "tags": [],
       "implicitDependencies": ["examples"]
+    },
+    "stack": {
+      "tags": []
+    },
+    "bricks": {
+      "tags": []
     }
   }
 }

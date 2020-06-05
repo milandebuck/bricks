@@ -1,1 +1,4 @@
-import './app/app.element.ts';
+import Bricks from '@bricks/bricks';
+import { example } from './app/example';
+
+Bricks.unpack('.app', example);

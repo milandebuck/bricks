@@ -20,7 +20,8 @@
               "apps/examples/src/assets"
             ],
             "styles": ["apps/examples/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "webpackConfig": "./webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -106,6 +107,58 @@
             "config": "apps/examples-e2e/.eslintrc",
             "tsConfig": ["apps/examples-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/examples-e2e/**"]
+          }
+        }
+      }
+    },
+    "stack": {
+      "root": "libs/stack",
+      "sourceRoot": "libs/stack/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/stack/tsconfig.lib.json",
+              "libs/stack/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/stack/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/stack/jest.config.js",
+            "tsConfig": "libs/stack/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "bricks": {
+      "root": "libs/bricks",
+      "sourceRoot": "libs/bricks/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/bricks/tsconfig.lib.json",
+              "libs/bricks/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/bricks/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/bricks/jest.config.js",
+            "tsConfig": "libs/bricks/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }
